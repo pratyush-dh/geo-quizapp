@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find the Country</title>
+    <!-- Load the leaflet library from a CDN -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.2/chroma.min.js"></script>
+    <!-- Set the style of the map container -->
+    <style>
+		#page, #map {
+			width: 80%;
+			margin: auto;
+		}
+
+		#map {
+			height: 80vmin;
+			width: 100%;
+		}
+		
+		.title{
+			padding: 10px 0px 10px 30px;
+			background-color: #04aa6d;
+			color: #f1f1f1;
+			border-radius: 30px 30px 0px 0px;
+			margin-bottom: 0px;
+		}
+		
+		.wrapper{
+			display: grid;
+			grid-template-columns: 2fr 2fr 1fr 1fr;
+			gap: 4px;
+			background-color: #f5f5f5;
+		}
+
+		#question-container, #message-container, #correct, #incorrect {
+			text-align: center;
+			height: 120px;
+		}
+
+		#question-container, #message-container {
+			background-color: #f1f1f1;
+		}
+
+		#correct, #incorrect {
+			background-color: #f2f2f2;
+		}
+
+		#map {
+			position: relative;
+		}
+		
+		.wrapper p {
+			font-size: 1.3rem; font-weight: bold;
+		}
+
+		.leaflet-tooltip-own {
+			padding: 0;
+			margin: 0;
+			border: none;
+			background: none;
+			color: black;
+			font-weight: bold;
+			box-shadow:none;
+			text-shadow: 0 0 3px #FF0000;
+		}
+
+		@media screen and (max-width: 1020px) {
+			#page, #map {
+				width: 100%;
+			}
+
+			#map {
+				height: 80vmin;
+			}
+		}
+
+		@media screen and (max-width: 720px) {
+			.wrapper {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 4px;
+			}
+		}
+				
+		
+    </style>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/esri-leaflet@3.0.1/dist/esri-leaflet.js"></script>
+</head>
+<body>
+	<div id="page">
+		<h1 class = "title">Find the Country</h1>
+
+		<div class="wrapper">
+			<div class="box" id="question-container"><p>Please select the following country:<br> </p></div>
+			<div class="box" id="message-container"><p>You selected:<br></p></div>
+			<div class="box" id="correct"><p>Correct:</p></div>
+			<div class="box" id="incorrect"><p>Incorrect: </p></div>
+		</div>
+
+		<!-- Create a div element to hold the map -->
+		<div id="map"></div>
+
+		<!-- Load the javascript code from a separate file -->
+		<script src="geoquiz.js"></script>
+
+		<div style="padding-top: 10px; text-align: center;">Connect with me on:
+			<a href="https://www.linkedin.com/in/pratyush-dhungana-243129175/" target="_blank">
+				<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="Linkedin" width="20" height="20" style="vertical-align: bottom;">
+			</a>
+			<a href="https://github.com/pratyush-dh" target="_blank">
+				<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub" width="20" height="20" style="vertical-align: bottom;">
+			</a>
+		</div>
+	</div>
+</body>
+</html>
